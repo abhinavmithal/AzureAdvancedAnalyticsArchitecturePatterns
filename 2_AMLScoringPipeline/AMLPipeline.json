@@ -1,0 +1,38 @@
+{
+    "name": "AMLPipeline",
+    "properties": {
+        "description": "Execute BES ML for scoring",
+        "activities": [
+            {
+                "type": "AzureMLBatchScoring",
+                "typeProperties": {},
+                "inputs": [
+                    {
+                        "name": "RawOutputBlobTable"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "ScoredOutputBlobTable"
+                    }
+                ],
+                "policy": {
+                    "timeout": "02:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "retry": 1
+                },
+                "scheduler": {
+                    "frequency": "Hour",
+                    "interval": 1
+                },
+                "name": "AzureMLScoringActivity",
+                "description": "AML webservice",
+                "linkedServiceName": "AMLLinkedService"
+            }
+        ],
+        "start": "2015-09-27T21:30:00Z",
+        "end": "2015-09-30T21:30:00Z",
+        "isPaused": false
+    }
+}

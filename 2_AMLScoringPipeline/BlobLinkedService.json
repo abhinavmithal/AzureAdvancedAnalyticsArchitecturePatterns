@@ -1,0 +1,11 @@
+{
+    "name": "BlobLinkedService",
+    "properties": {
+        "description": "",
+        "hubName": "onprempipeline_hub",
+        "type": "AzureStorage",
+        "typeProperties": {
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=starterkit;AccountKey=**********"
+        }
+    }
+}

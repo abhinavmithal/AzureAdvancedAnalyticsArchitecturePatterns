@@ -1,0 +1,47 @@
+{
+    "name": "IngressPipeline",
+    "properties": {
+        "description": "This pipeline has one Copy activity that copies data from an on-prem SQL to Azure blob",
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "SELECT TOP 2 * FROM StarterKit.dbo.MicrosoftKeynoteSocialDataRaw ORDER BY NEWID()"
+                    },
+                    "sink": {
+                        "type": "BlobSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputOnPremSQLTable"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "RawOutputBlobTable"
+                    }
+                ],
+                "policy": {
+                    "timeout": "01:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval"
+                },
+                "scheduler": {
+                    "frequency": "Hour",
+                    "interval": 1
+                },
+                "name": "CopyFromSQLtoBlob",
+                "description": "Copy data from on-prem SQL server to blob"
+            }
+        ],
+        "start": "2015-09-28T21:30:00Z",
+        "end": "2015-09-30T21:30:00Z",
+        "isPaused": false
+    }
+}

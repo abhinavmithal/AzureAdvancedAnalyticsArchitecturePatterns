@@ -1,0 +1,23 @@
+{
+    "name": "InputOnPremSQLTable",
+    "properties": {
+        "published": false,
+        "type": "SqlServerTable",
+        "linkedServiceName": "OnPremSQLLinkedService",
+        "typeProperties": {
+            "tableName": "MicrosoftKeynoteSocialDataRaw"
+        },
+        "availability": {
+            "frequency": "Hour",
+            "interval": 1
+        },
+        "external": true,
+        "policy": {
+            "externalData": {
+                "retryInterval": "00:01:00",
+                "retryTimeout": "00:10:00",
+                "maximumRetry": 3
+            }
+        }
+    }
+}

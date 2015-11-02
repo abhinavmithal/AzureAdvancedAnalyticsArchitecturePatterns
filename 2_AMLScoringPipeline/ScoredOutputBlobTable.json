@@ -1,0 +1,38 @@
+{
+    "name": "ScoredOutputBlobTable",
+    "properties": {
+        "published": false,
+        "type": "AzureBlob",
+        "linkedServiceName": "BlobLinkedService",
+        "typeProperties": {
+            "fileName": "Output.csv",
+            "folderPath": "onprem/OutputfromAML",
+            "format": {
+                "type": "TextFormat",
+                "columnDelimiter": ","
+            },
+            "partitionedBy": [
+                {
+                    "name": "Date",
+                    "value": {
+                        "type": "DateTime",
+                        "date": "SliceStart",
+                        "format": "yyyyMMdd"
+                    }
+                },
+                {
+                    "name": "Hour",
+                    "value": {
+                        "type": "DateTime",
+                        "date": "SliceStart",
+                        "format": "HHmm"
+                    }
+                }
+            ]
+        },
+        "availability": {
+            "frequency": "Hour",
+            "interval": 1
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "name": "OutputOnPremSQLTable",
+    "properties": {
+        "structure": [
+            {
+                "name": "Timestamp",
+                "type": "String"
+            },
+            {
+                "name": "Facebook",
+                "type": "String"
+            },
+            {
+                "name": "Twitter",
+                "type": "String"
+            },
+            {
+                "name": "LinkedIn",
+                "type": "String"
+            },
+            {
+                "name": "TotalPosts",
+                "type": "String"
+            }
+        ],
+        "published": false,
+        "type": "SqlServerTable",
+        "linkedServiceName": "OnPremSQLLinkedService",
+        "typeProperties": {
+            "tableName": "MicrosoftKeynoteSocialTrend"
+        },
+        "availability": {
+            "frequency": "Hour",
+            "interval": 1
+        }
+    }
+}
