@@ -8,10 +8,11 @@
                 "typeProperties": {
                     "source": {
                         "type": "SqlSource",
-                        "sqlReaderQuery": "SELECT TOP 2 * FROM StarterKit.dbo.MicrosoftKeynoteSocialDataRaw ORDER BY NEWID()"
-                    },
+                      "sqlReaderQuery": "SELECT TOP 150 * FROM StarterKit.dbo.InputSensorData ORDER BY NEWID()"
+                        },
                     "sink": {
                         "type": "BlobSink",
+                        "blobWriterAddHeader": true,
                         "writeBatchSize": 0,
                         "writeBatchTimeout": "00:00:00"
                     }
@@ -23,7 +24,7 @@
                 ],
                 "outputs": [
                     {
-                        "name": "RawOutputBlobTable"
+                        "name": "RawInputBlobTable"
                     }
                 ],
                 "policy": {

@@ -8,7 +8,7 @@
                 "typeProperties": {},
                 "inputs": [
                     {
-                        "name": "RawOutputBlobTable"
+                        "name": "RawInputBlobTable"
                     }
                 ],
                 "outputs": [

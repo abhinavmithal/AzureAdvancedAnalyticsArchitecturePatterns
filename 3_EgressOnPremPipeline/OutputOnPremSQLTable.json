@@ -3,23 +3,19 @@
     "properties": {
         "structure": [
             {
-                "name": "Timestamp",
+                "name": "DeviceId",
                 "type": "String"
             },
             {
-                "name": "Facebook",
+                "name": "TranDate",
                 "type": "String"
             },
             {
-                "name": "Twitter",
+                "name": "ScoredLabels",
                 "type": "String"
             },
             {
-                "name": "LinkedIn",
-                "type": "String"
-            },
-            {
-                "name": "TotalPosts",
+                "name": "ScoredProbabilities",
                 "type": "String"
             }
         ],
@@ -27,7 +23,7 @@
         "type": "SqlServerTable",
         "linkedServiceName": "OnPremSQLLinkedService",
         "typeProperties": {
-            "tableName": "MicrosoftKeynoteSocialTrend"
+            "tableName": "ScoringResults"
         },
         "availability": {
             "frequency": "Hour",

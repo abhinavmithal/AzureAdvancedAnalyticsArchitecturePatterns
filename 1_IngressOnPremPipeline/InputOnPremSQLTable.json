@@ -5,7 +5,7 @@
         "type": "SqlServerTable",
         "linkedServiceName": "OnPremSQLLinkedService",
         "typeProperties": {
-            "tableName": "MicrosoftKeynoteSocialDataRaw"
+            "tableName": "InputSensorData"
         },
         "availability": {
             "frequency": "Hour",
