@@ -1,3 +1,5 @@
+/* © 2015 Microsoft. All rights reserved. */
+
 CREATE TABLE StarterKit.dbo.InputSensorData
 (
 DeviceId varchar(25),
@@ -31,7 +33,7 @@ ScoredProbabilities varchar(25),
 GO
 
 BULK INSERT StarterKit.dbo.inputSensorData
-FROM 'C:\Users\rijai\Dropbox\Work\StarterKit-Final\SampleData\InputSample\starterkit_inputdata.csv' 
+FROM '~\SampleData\InputSample\starterkit_inputdata.csv' 
 WITH
 (
 FIRSTROW = 2,
